@@ -1,0 +1,16 @@
+﻿@model BooksGallery.Models.IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Welcome to my Daughter's Book Gallery</h1>
+</div>
+<div class="container main">
+    <div class="row row-content">
+        @foreach(var item in Model.Books)
+        { 
+            <a asp-controller="Book" asp-action="Details" asp-route-id="@item.Id"><img src="@item.PhotoPath" /></a>
+        }
+    </div>
+</div>
